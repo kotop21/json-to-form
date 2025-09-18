@@ -10,3 +10,9 @@ export interface FormData {
   questions: Question[];
   defaultPoints?: number;
 }
+
+export interface CreateFormResult {
+  success: boolean;
+  message?: string;
+  error?: string;
+}
