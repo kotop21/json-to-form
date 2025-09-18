@@ -1,4 +1,4 @@
-import fs from 'fs';
+
 import { createForm } from "./form/create-form.js";
 import { readJsonFile } from "./file-utils.js";
 import * as readline from 'readline'
@@ -19,21 +19,18 @@ async function main() {
     const filePath = await input("Файл: ");
     const formData = await readJsonFile(filePath);
 
-    console.log("Все успішно прочитано \nСтворення форми...");
+    console.log("✅ Все успішно прочитано \nСтворення форми...");
     const formId = await createForm(formData);
 
-    console.log(`Форма створена: https://docs.google.com/forms/d/${formId}/edit`);
+    console.log(`✅ Форма створена: https://docs.google.com/forms/d/${formId}/edit`);
     break;
   }
   rl.close();
 }
 
 main()
-  .then(() => {
-    console.log("Вкажи путь до файлу.")
-  })
   .catch((err: any) => {
-    console.log("Помилка: ", err.message);
-    console.log("Спробуйте ще раз...\n");
+    console.log("❌ Помилка: ", err.message);
+    console.log("⚠️ Пробуємо наново...\n");
     process.exit(1);
   });

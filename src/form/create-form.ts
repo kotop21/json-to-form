@@ -1,11 +1,12 @@
-import { forms } from './auth.js';
+import { forms } from './auth-form.js';
 import { forms_v1 } from 'googleapis';
 import type { FormData } from "../types/create-from-types.js";
+
 
 export const createForm = async (formData: FormData): Promise<string> => {
   try {
     const res = await forms.forms.create({
-      requestBody: { info: { title: formData.title || 'Новий тест' } }
+      requestBody: { info: { title: formData.title || 'Нова форма' } }
     });
 
     const formId = res.data.formId as string;
@@ -55,6 +56,6 @@ export const createForm = async (formData: FormData): Promise<string> => {
 
     return formId;
   } catch (err: any) {
-    throw new Error("Помилка при створенні форми: " + err.message);
+    throw new Error("❌ Помилка при створенні форми: " + err.message);
   }
 };
