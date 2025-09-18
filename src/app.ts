@@ -16,21 +16,24 @@ const input = (str: string) => {
 
 async function main() {
   while (true) {
-    try {
-      const filePath = '/Users/vitia/Documents/json-to-form/static/test.json';
-      const formData = await readJsonFile(filePath);
+    const filePath = await input("Файл: ");
+    const formData = await readJsonFile(filePath);
 
-      console.log("Все успішно прочитано \nСтворення форми...");
-      const formId = await createForm(formData);
+    console.log("Все успішно прочитано \nСтворення форми...");
+    const formId = await createForm(formData);
 
-      console.log(`Форма створена: https://docs.google.com/forms/d/${formId}/edit`);
-      break;
-    } catch (err: any) {
-      console.log("Помилка:", err.message);
-      console.log("Спробуйте ще раз...\n");
-    }
+    console.log(`Форма створена: https://docs.google.com/forms/d/${formId}/edit`);
+    break;
   }
   rl.close();
 }
 
-main();
+main()
+  .then(() => {
+    console.log("Вкажи путь до файлу.")
+  })
+  .catch((err: any) => {
+    console.log("Помилка: ", err.message);
+    console.log("Спробуйте ще раз...\n");
+    process.exit(1);
+  });
