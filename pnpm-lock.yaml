@@ -32,6 +32,9 @@ importers:
       tsx:
         specifier: ^4.20.5
         version: 4.20.5
+      zod:
+        specifier: ^4.1.9
+        version: 4.1.9
     devDependencies:
       typescript:
         specifier: ^5.9.2
@@ -612,6 +615,9 @@ packages:
 
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+
+  zod@4.1.9:
+    resolution: {integrity: sha512-HI32jTq0AUAC125z30E8bQNz0RQ+9Uc+4J7V97gLYjZVKRjeydPgGt6dvQzFrav7MYOUGFqqOGiHpA/fdbd0cQ==}
 
 snapshots:
 
@@ -1202,3 +1208,5 @@ snapshots:
   web-streams-polyfill@3.3.3: {}
 
   wrappy@1.0.2: {}
+
+  zod@4.1.9: {}

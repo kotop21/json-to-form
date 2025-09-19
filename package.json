@@ -24,6 +24,7 @@
     "google-auth-library": "^10.3.0",
     "googleapis": "^160.0.0",
     "node-domexception": "1.0.0",
-    "tsx": "^4.20.5"
+    "tsx": "^4.20.5",
+    "zod": "^4.1.9"
   }
 }
